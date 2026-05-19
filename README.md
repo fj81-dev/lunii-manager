@@ -1,5 +1,7 @@
 # Lunii Manager
 
+[Download Lunii Manager for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.0.0/Lunii-Manager-1.0.0.dmg)
+
 A native macOS app to manage stories on your **Lunii v2** storyteller, without going through Luniistore.
 
 Local library, drag-and-drop, built-in player, official Lunii account sign-in, firmware updates — all packaged in one self-contained app that runs offline whenever it can, and adapts to the way you actually organize your stories.
