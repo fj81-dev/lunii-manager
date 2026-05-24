@@ -1,10 +1,12 @@
 # Lunii Manager
 
-[Download Lunii Manager for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.0.0/Lunii-Manager-1.0.0.dmg)
+[Download Lunii Manager 1.4.0 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.4.0/Lunii-Manager-1.4.0.dmg)
 
-A native macOS app to manage stories on your **Lunii v2** storyteller, without going through Luniistore.
+A native macOS app to manage stories on your **Lunii v1 (upgraded to FW2), v2, v3 or FLAM** storyteller, without going through Luniistore.
 
 Local library, drag-and-drop, built-in player, official Lunii account sign-in, firmware updates — all packaged in one self-contained app that runs offline whenever it can, and adapts to the way you actually organize your stories.
+
+> 🪟 **A Windows version is currently in development.** macOS is the primary platform today, but a Windows port is on the way; no ETA yet — follow this repo for updates.
 
 <p align="center"><img src="screen.webp" alt="Overview" /></p>
 
@@ -28,7 +30,8 @@ Plug your Lunii in over USB and it shows up in the window with its nickname, col
 
 - **Rename** your Lunii ("Léa's Lunii", "Lucas's Lunii"…) and pick its real shell colour.
 - **Reorder stories** by drag-and-drop, push one to the top, to the bottom, or remove it with a single click.
-- **Back up** every story on a Lunii into your library in one click.
+- **Back up** the Lunii — three flavours behind the toolbar button: copy all stories to your library, copy all stories to **any folder** (USB stick, NAS…), or take a **bit-for-bit `.img` dump** of the whole SD card. The dump asks for your macOS password (because reading the raw disk needs root) and shows a live progress bar.
+- **Open an `.img`** dump back as if it were a Lunii (File → Ouvrir une image SD…). Mount it in **read-only** (⇧⌘O) to preserve the original byte-for-byte, or read-write (⌘O) to test the app against the dump.
 - **Wipe** the Lunii (clears all stories, keeps the device settings).
 
 <p align="center"><img src="rename.webp" alt="Rename" /></p>
@@ -49,7 +52,7 @@ Plug in two (or more) and each one gets its own pane, with independent selection
 
 ### Official Lunii account
 
-Sign in with your real Lunii account (the one on `lunii.com`) to get back every story you've bought or have through your subscription. You can download any of them straight onto any connected Lunii — no need to go through Luniistore at all.
+Sign in with your real Lunii account (the one on `lunii.com`) to get back every story you've bought or have through your subscription. **Multi-select** several stories (cmd-click / shift-click), then right-click → "Télécharger N histoires sur <Lunii>": they queue up and write to the device one after the other while you keep using the app. Stories already on the device are caught up front (one sheet listing them with their covers, then the download skips straight to the rest).
 
 <p align="center"><img src="account.webp" alt="Account" /></p>
 
@@ -77,9 +80,26 @@ UI translated into **French, English, German, Spanish, Italian, Portuguese, Dutc
 ## Requirements
 
 - **macOS 14 (Sonoma) or later.**
-- **Apple Silicon Mac** (M1, M2, M3 or M4). Intel Macs are not supported.
-- **Lunii v2 only** (firmware 2.x) for now. The **v3** (with the colour screen) and the **FLAM** devices are **not supported yet**.
-  - The Lunii v1 *hybrid* model (early hardware re-flashed to firmware v2) works just like a v2.
+- **Apple Silicon or Intel Mac.** Lunii Manager ships as a universal binary.
+- **Lunii v1 (upgraded to firmware 2), v2, v3 or FLAM**, mounted as a USB volume.
+  - **Lunii v1** must be upgraded to firmware 2 first (free, one-click from Luniistore). Once upgraded it takes the same USB-mass-storage code path as a v2. Raw v1 firmware (pre-upgrade) is not supported.
+
+### v3 / FLAM — what to expect
+
+> ⚠️ **Support for v3 and FLAM is experimental for now** — the code paths are fully implemented against the reverse-engineering notes and cross-validated against the existing Java / Python reference clients, but I personally only own v1 and v2 hardware, so the v3 and FLAM paths haven't been exercised on my own devices. It should work, but **back your card up** before letting Lunii Manager write to it, and please report anything that misbehaves — feedback from v3 / FLAM owners is how we get this out of "experimental".
+
+Lunii's third-generation devices (v3 colour-screen and FLAM) protect their stories with per-device crypto keys baked into the microcontroller — those keys never leave the device. Most of what you'd want to do still works, but a few corners are blocked by design:
+
+| Operation                         | Custom story (Lunii Studio, community pack)           | Official story (bought / subscription)                                                 |
+|-----------------------------------|-------------------------------------------------------|----------------------------------------------------------------------------------------|
+| List, reorder, delete             | ✅                                                     | ✅                                                                                      |
+| Add from your library             | ✅                                                     | ✅ — only on the Lunii of origin (we tag the backup with its SNU and refuse mismatches) |
+| Add from your account             | n/a                                                   | ✅                                                                                      |
+| **Listen in the built-in player** | ✅                                                     | ❌ — listen on the device itself                                                        |
+| **Back up to library**            | ✅ — re-importable on any Lunii (XXTEA "pivot" format) | ✅ — verbatim bytes + sidecar SNU, only re-installable on the source Lunii              |
+| **Copy to another Lunii**         | ✅                                                     | ❌ — re-download it on the target from your account instead                             |
+
+Official v3 packs show a **🔒 "Encrypted"** badge and pill in the side panel. The Play button is replaced with a disabled "Playback unavailable (encrypted)" label so you know up front the player can't open them.
 
 ---
 
