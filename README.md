@@ -1,6 +1,6 @@
 # Lunii Manager
 
-[Download Lunii Manager 1.4.0 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.4.0/Lunii-Manager-1.4.0.dmg)
+[Download Lunii Manager 1.5.0 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.5.0/Lunii-Manager-1.5.0.dmg)
 
 A native macOS app to manage stories on your **Lunii v1 (upgraded to FW2), v2, v3 or FLAM** storyteller, without going through Luniistore.
 
@@ -26,12 +26,12 @@ Keep every story you have (bought, shared, custom-made with Lunii Studio) in **o
 
 ### Effortless device management
 
-Plug your Lunii in over USB and it shows up in the window with its nickname, colour, serial number, firmware version and free space.
+Plug your Lunii in over USB and it shows up in the window with its nickname, colour, serial number, generation (v2 / v3), firmware version and free space.
 
 - **Rename** your Lunii ("Léa's Lunii", "Lucas's Lunii"…) and pick its real shell colour.
 - **Reorder stories** by drag-and-drop, push one to the top, to the bottom, or remove it with a single click.
-- **Back up** the Lunii — three flavours behind the toolbar button: copy all stories to your library, copy all stories to **any folder** (USB stick, NAS…), or take a **bit-for-bit `.img` dump** of the whole SD card. The dump asks for your macOS password (because reading the raw disk needs root) and shows a live progress bar.
-- **Open an `.img`** dump back as if it were a Lunii (File → Ouvrir une image SD…). Mount it in **read-only** (⇧⌘O) to preserve the original byte-for-byte, or read-write (⌘O) to test the app against the dump.
+- **Back up** the Lunii — three flavours behind the toolbar button: copy all stories to your library, copy all stories to **any folder** (USB stick, NAS…), or take a **bit-for-bit `.img` dump** of the SD card. The dump asks for your macOS password (reading the raw disk needs root), shows a live progress bar and can be cancelled; if the card is bigger than the Lunii partition it offers to dump just the partition or the whole card.
+- **Open an `.img`** dump back as if it were a Lunii (File → Ouvrir une image SD…). Mount it **read-only** (⇧⌘O) to preserve the original byte-for-byte, or read-write (⌘O) to test the app against the dump. It mounts as a normal Finder volume, and a 📁 button in the device header opens it in Finder (handy for the staged firmware files).
 - **Wipe** the Lunii (clears all stories, keeps the device settings).
 
 <p align="center"><img src="rename.webp" alt="Rename" /></p>
@@ -111,6 +111,8 @@ Official v3 packs show a **🔒 "Encrypted"** badge and pill in the side panel. 
 4. The first time you plug in a Lunii, macOS will ask you to grant access to **removable volumes**: allow it. If your library is on a NAS, also allow access to **network volumes**.
 
 > Clicked "Don't Allow" by mistake? **Lunii Manager → Reset permissions…** replays the system prompt.
+
+> **Staying up to date**: **Lunii Manager → Check for Updates…** asks GitHub for the latest release and offers the new `.dmg` when one's available — no background calls, only when you click.
 
 ---
 
