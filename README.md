@@ -10,7 +10,19 @@ Local library, drag-and-drop, built-in player, official Lunii account sign-in, f
 
 <p align="center"><img src="screen.webp" alt="Overview" /></p>
 
----
+
+> ⚠️ **First launch is blocked by macOS.** The app is signed ad-hoc (no paid Apple Developer ID), so macOS warns that it *"can't verify Lunii Manager.app is free of malware"* and refuses to open it. The old right-click → Open shortcut no longer works on macOS 15+, so allow it once (macOS remembers afterwards) with **one** of the two methods below.
+
+<p align="center"><img src="unauthorized.webp" alt="macOS Gatekeeper blocking the unsigned app on first launch" width="300" /></p>
+
+**Terminal** — copy the app into **Applications**, then run:
+
+```sh
+xattr -dr com.apple.quarantine "/Applications/Lunii Manager.app"
+```
+
+**Or, without Terminal** — open **System Settings → Privacy & Security**, scroll to the *"Lunii Manager.app was blocked"* message and click **Open Anyway**.
+
 
 ## What you can do
 
@@ -107,7 +119,7 @@ Official v3 packs show a **🔒 "Encrypted"** badge and pill in the side panel. 
 
 1. Download the `.dmg` from the releases page.
 2. Open the `.dmg` and drag **Lunii Manager** into **Applications**.
-3. The first launch will be blocked by macOS Gatekeeper because the app isn't signed by a paid Apple Developer ID: **right-click Lunii Manager → Open**, then confirm. macOS will remember from then on.
+3. **The first launch is blocked by macOS Gatekeeper** because the app isn't signed by a paid Apple Developer ID. See the ⚠️ note near the top of this page to allow it the first time — macOS remembers from then on.
 4. The first time you plug in a Lunii, macOS will ask you to grant access to **removable volumes**: allow it. If your library is on a NAS, also allow access to **network volumes**.
 
 > Clicked "Don't Allow" by mistake? **Lunii Manager → Reset permissions…** replays the system prompt.
