@@ -1,6 +1,6 @@
 # Lunii Manager
 
-[Download Lunii Manager 1.5.0 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.5.0/Lunii-Manager-1.5.0.dmg)
+[Download Lunii Manager 1.6.0 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.6.0/Lunii-Manager-1.6.0.dmg)
 
 A native macOS app to manage stories on your **Lunii v1 (upgraded to FW2), v2, v3 or FLAM** storyteller, without going through Luniistore.
 
