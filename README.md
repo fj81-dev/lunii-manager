@@ -1,6 +1,6 @@
 # Lunii Manager
 
-[Download Lunii Manager 1.6.0 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.6.0/Lunii-Manager-1.6.0.dmg)
+[Download Lunii Manager 1.7.0 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.7.0/Lunii-Manager-1.7.0.dmg)
 
 A native macOS app to manage stories on your **Lunii v1 (upgraded to FW2), v2, v3 or FLAM** storyteller, without going through Luniistore.
 
@@ -23,6 +23,7 @@ xattr -dr com.apple.quarantine "/Applications/Lunii Manager.app"
 
 **Or, without Terminal** — open **System Settings → Privacy & Security**, scroll to the *"Lunii Manager.app was blocked"* message and click **Open Anyway**.
 
+---
 
 ## What you can do
 
@@ -35,6 +36,16 @@ Keep every story you have (bought, shared, custom-made with Lunii Studio) in **o
 - Filters: age range ("from 5 years", "up to 7 years"…), official vs. custom, already on the Lunii or not, night-mode availability.
 - Sort by title, age, weight, date added.
 - Stories built with Lunii Studio (raw editor zips) get **automatically converted** to the Lunii format (BMP images, MP3 mono audio) at install time — no third-party tools needed.
+
+### Edit a pack's info and cover
+
+Custom and community packs often arrive with a mangled title, no description or a placeholder cover. Right-click a non-official story — or use the detail panel — and pick **"Modifier les infos"** to set its **title, subtitle, description and suggested age**. The changes are written straight into the pack's `story.json`, so the fix travels with the file.
+
+<p align="center"><img src="edit-info.webp" alt="Edit a custom pack's information" width="400" /></p>
+
+Give it a real **cover** too: pick an image or drag-and-drop one onto the slot, then frame it in the built-in cropper — **square or 4:3**, pan, zoom, flip and rotate, with the surroundings dimmed. Any format (JPEG, HEIC, PNG, WebP…) is converted to PNG and resized automatically.
+
+<p align="center"><img src="crop.webp" alt="Crop the cover image" width="400" /></p>
 
 ### Effortless device management
 
