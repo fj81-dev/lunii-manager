@@ -1,12 +1,12 @@
 # Lunii Manager
 
-[Download Lunii Manager 1.7.0 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.7.0/Lunii-Manager-1.7.0.dmg)
+[Download Lunii Manager 1.7.1 for macOS](https://github.com/fj81-dev/lunii-manager/releases/download/1.7.1/Lunii-Manager-1.7.1.dmg)
 
 A native macOS app to manage stories on your **Lunii v1 (upgraded to FW2), v2, v3 or FLAM** storyteller, without going through Luniistore.
 
 Local library, drag-and-drop, built-in player, official Lunii account sign-in, firmware updates — all packaged in one self-contained app that runs offline whenever it can, and adapts to the way you actually organize your stories.
 
-> 🪟 **A Windows version is currently in development.** macOS is the primary platform today, but a Windows port is on the way; no ETA yet — follow this repo for updates.
+> 🪟 A **Windows** version is also available — see the [main page](https://github.com/fj81-dev/lunii-manager-win).
 
 <p align="center"><img src="screen.webp" alt="Overview" /></p>
 
@@ -142,6 +142,7 @@ Official v3 packs show a **🔒 "Encrypted"** badge and pill in the side panel. 
 ## Notes
 
 - **Free software, personal non-commercial use only.** Not affiliated with Lunii SAS — this is an independent project. *Lunii* is a trademark of Lunii SAS.
+- **Piracy is not condoned.** Lunii Manager is for managing stories you legitimately own. **Official stories must be purchased from the official Lunii store** — don't download or share copyrighted packs you didn't buy. **No support will be given for anything piracy-related.**
 - **If you paid for this app, you got scammed**: it's not sold anywhere.
 - No external dependencies: no Homebrew, no Python, nothing else to install. Just drag the `.app`.
 
